@@ -9,10 +9,13 @@ jobs:
   deploy:
     name: Test, Build, Deploy
     runs-on: ubuntu-latest
-    env:
-      GITHUB_HEAD_REF: ${{ github.ref_name }}
 
     steps:
+    - name: create env file
+      run: |
+        touch .env
+        echo GITHUB_HEAD_REF=${{ github.ref_name }} >> .env
+        
     - name : "Deploytag"
       uses: opszero/deploytag@v3.0.1
       id: deploytag
