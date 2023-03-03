@@ -3,11 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - qa
-      - production
-      - 'feature_deploy/**'
-      - 'bug/**'
-      - 'epic/**'
+      - '*'
 
 jobs:
   deploy:
