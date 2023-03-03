@@ -14,7 +14,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name : "Deploytag"
-      uses: thaunghtike-share/deploytag@main
+      uses: thaunghtike-share/actions-deploytag@master
       id: deploytag
 
     - name: Install Python
