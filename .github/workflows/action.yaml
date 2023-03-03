@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name : "Deploytag"
-      uses: opszero/deploytag@v3.0.1
+      uses: thaunghtike-share/deploytag@v1.0
       id: deploytag
 
     - name: Checkout
