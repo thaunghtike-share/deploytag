@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name : "Deploytag"
-      uses: thaunghtike-share/deploytag@v.10
+      uses: thaunghtike-share/deploytag@v1.0
       id: deploytag
 
     - name: Checkout
