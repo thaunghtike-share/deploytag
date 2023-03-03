@@ -9,6 +9,8 @@ jobs:
   deploy:
     name: Test, Build, Deploy
     runs-on: ubuntu-latest
+    env:
+      GITHUB_HEAD_REF: ${{ github.ref }}
 
     steps:
     - name : "Deploytag"
