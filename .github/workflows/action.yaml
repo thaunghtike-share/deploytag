@@ -16,5 +16,5 @@ jobs:
       id: deploytag
 
     - name: Checkout
-      uses: actions/checkout@v2-node16
+      uses: actions/checkout@v3
 
