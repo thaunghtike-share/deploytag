@@ -15,8 +15,3 @@ jobs:
     - name : "Deploytag"
       uses: thaunghtike-share/actions-deploytag@master
       id: deploytag
-
-    - name: Install Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
