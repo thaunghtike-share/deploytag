@@ -10,28 +10,6 @@ jobs:
     name: Test, Build, Deploy
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:13.3
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_DB: opszero_test
-          POSTGRES_PASSWORD: "postgres"
-        ports:
-        - 5432:5432
-        # Set health checks to wait until postgres has started
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-      redis:
-        image: redis:5.0
-        ports:
-        - 6379:6379
-        options: --entrypoint redis-server
-
     steps:
     - name : "Deploytag"
       uses: opszero/deploytag@v3.0.1
