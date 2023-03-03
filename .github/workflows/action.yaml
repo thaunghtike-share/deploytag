@@ -3,17 +3,46 @@ name: Deploy
 on:
   push:
     branches:
-      - '**'
+      - qa
+      - production
+      - 'feature_deploy/**'
+      - 'bug/**'
+      - 'epic/**'
 
 jobs:
   deploy:
     name: Test, Build, Deploy
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:13.3
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: opszero_test
+          POSTGRES_PASSWORD: "postgres"
+        ports:
+        - 5432:5432
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      redis:
+        image: redis:5.0
+        ports:
+        - 6379:6379
+        options: --entrypoint redis-server
+
     steps:
-      
     - name : "Deploytag"
-      uses: thaunghtike-share/actions-deploytag@master
+      uses: opszero/deploytag@v2.2
       id: deploytag
       with:
         github-ref: ${{ github.ref }}
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
