@@ -15,6 +15,3 @@ jobs:
       uses: thaunghtike-share/actions-deploytag@master
       id: deploytag
 
-    - name: Checkout
-      uses: actions/checkout@v3
-
