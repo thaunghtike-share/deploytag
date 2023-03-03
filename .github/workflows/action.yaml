@@ -10,6 +10,7 @@ jobs:
     name: Test, Build, Deploy
     runs-on: ubuntu-latest
     steps:
+    
     - name : "Deploytag"
       uses: thaunghtike-share/actions-deploytag@master
       id: deploytag
