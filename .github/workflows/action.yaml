@@ -15,3 +15,5 @@ jobs:
     - name : "Deploytag"
       uses: thaunghtike-share/actions-deploytag@master
       id: deploytag
+      with:
+        github-ref: ${{ github.ref }}
