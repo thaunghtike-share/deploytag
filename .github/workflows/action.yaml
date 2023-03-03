@@ -36,8 +36,6 @@ jobs:
     - name : "Deploytag"
       uses: opszero/deploytag@v3.0.1
       id: deploytag
-      with:
-        github-ref: ${{ github.ref }}
 
     - name: Checkout
       uses: actions/checkout@v2
