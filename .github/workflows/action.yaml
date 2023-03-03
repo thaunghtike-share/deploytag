@@ -11,12 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     - name : "Deploytag"
       uses: thaunghtike-share/deploytag@main
       id: deploytag
-
-    - name: Checkout
-      uses: actions/checkout@v2
 
     - name: Install Python
       uses: actions/setup-python@v4
